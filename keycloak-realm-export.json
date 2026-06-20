@@ -1,0 +1,41 @@
+{
+  "realm": "fitness-app",
+  "enabled": true,
+  "sslRequired": "none",
+  "registrationAllowed": true,
+  "clients": [
+    {
+      "clientId": "oauth2-pkce-client",
+      "enabled": true,
+      "publicClient": true,
+      "protocol": "openid-connect",
+      "redirectUris": ["http://localhost:5173/*"],
+      "webOrigins": ["http://localhost:5173", "+"],
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": true,
+      "implicitFlowEnabled": false,
+      "serviceAccountsEnabled": false,
+      "attributes": {
+        "pkce.code.challenge.method": "S256",
+        "post.logout.redirect.uris": "http://localhost:5173"
+      }
+    }
+  ],
+  "users": [
+    {
+      "username": "testuser",
+      "enabled": true,
+      "email": "testuser@example.com",
+      "emailVerified": true,
+      "firstName": "Test",
+      "lastName": "User",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "Test@123",
+          "temporary": false
+        }
+      ]
+    }
+  ]
+}
